@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import { AnalyticsBrowser } from "@segment/analytics-next";
+import HubspotContactForm from "./components/HubspotForm";
 const writeKey = process.env.write_key;
 const analytics = AnalyticsBrowser.load({ writeKey: "trt2mhv6rjiqM8rpsRExWM1pBiguWqUm" });
 
@@ -18,16 +19,16 @@ const handleSubmit = async (e) => {
 
 
   // Track analytics event
-  analytics.track('Non-Hubspot Form Submitted', {
-    attributes: {
-      type: 'Contacts',
-      userName: username,
-      email: email,
-      message: message,
-    },
-  });
+  // analytics.track('Non-Hubspot Form Submitted', {
+  //   attributes: {
+  //     type: 'Contacts',
+  //     userName: username,
+  //     email: email,
+  //     message: message,
+  //   },
+  // });
 
-  window.alert('Form Submitted Successfully');
+  // window.alert('Form Submitted Successfully');
 };
 
 
@@ -99,39 +100,11 @@ const Contact = () => {
 
       <div className="container">
         <div className="contact-form">
-          <form 
-            // action="https://formspree.io/f/xrgwozqz"
-            // method="POST"
-            // onSubmit={handleSubmit}
-            className="contact-inputs">
-            <input
-              type="text"
-              placeholder="username"
-              name="username"
-              // value={isAuthenticated ? user.name : ""}
-              required
-              autoComplete="off"
-            />
-
-            <input
-              type="email"
-              name="Email"
-              placeholder="Email"
-              autoComplete="off"
-              // value={isAuthenticated ? user.email : ""}
-              required
-            />
-
-            <textarea
-              name="Message"
-              cols="30"
-              rows="10"
-              required
-              autoComplete="off"
-              placeholder="Enter you message"></textarea>
-
-            <input type="submit" value="send" />
-          </form>
+        <HubspotContactForm 
+                region="eu1"
+                portalId="143378670"
+                formId='64549387-8218-4d05-b6c2-2d3dd954dc9f'
+                />
         </div>
       </div>
       
@@ -140,3 +113,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

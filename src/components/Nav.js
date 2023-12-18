@@ -203,7 +203,7 @@ const Nav = () => {
           <li>
             <NavLink
               to="/about"
-              className="navbar-link "
+              className="navbar-link"
               onClick={() =>{ setMenuIcon(false); onTrack("About") }}>
               About
             </NavLink>

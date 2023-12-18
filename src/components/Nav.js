@@ -195,7 +195,7 @@ const Nav = () => {
           <li>
             <NavLink
               to="/"
-              className="navbar-link  hs-cta-trigger-button hs-cta-trigger-button-88392900291"
+              className="navbar-link hs-cta-trigger-button hs-cta-trigger-button-88392900291"
               onClick={() =>{ setMenuIcon(false); onTrack("Home") }}>
               Home
             </NavLink>

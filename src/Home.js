@@ -62,16 +62,6 @@ const Home = () => {
           type: "Home",
           email: user.name
         },
-      },
-      {
-        externalIds: [
-          {
-            id: hubspotutk,
-            type: 'hubspot_id',
-            collection: 'users',
-            encoding: 'none'
-          }
-        ]
       });
     }
   }, [isAuthenticated, user]);

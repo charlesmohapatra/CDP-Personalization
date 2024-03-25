@@ -7,9 +7,9 @@ import { AnalyticsBrowser} from "@segment/analytics-next";
 import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
+import ScrollDetector from "./components/ScrollDetector";
 const writeKey = process.env.WRITE_KEY;
 const analytics = AnalyticsBrowser.load({ writeKey: "trt2mhv6rjiqM8rpsRExWM1pBiguWqUm" });
-import ScrollDetector from "./components/ScrollDetector";
 
 analytics.debug(true);
 const Home = () => {

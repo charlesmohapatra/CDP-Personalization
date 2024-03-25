@@ -9,6 +9,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 const writeKey = process.env.WRITE_KEY;
 const analytics = AnalyticsBrowser.load({ writeKey: "trt2mhv6rjiqM8rpsRExWM1pBiguWqUm" });
+import ScrollDetector from "./components/ScrollDetector";
 
 analytics.debug(true);
 const Home = () => {
@@ -70,10 +71,12 @@ const Home = () => {
   };
   return (
     <>
-      <HeroSection myData={data} />
+    <ScrollDetector>
+    <HeroSection myData={data} />
       <FeatureProduct />
       <Services />
       <Trusted />
+    </ScrollDetector>
     </>
   );
 };

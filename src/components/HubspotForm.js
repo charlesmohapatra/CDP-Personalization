@@ -5,6 +5,7 @@ const analytics = AnalyticsBrowser.load({ writeKey: "trt2mhv6rjiqM8rpsRExWM1pBig
     
 const HubspotContactForm = props => {
     const { region, portalId, formId } = props;
+    const formContainerRef = useRef(null);
     useEffect(() => {
         const script = document.createElement('script');
         script.src='https://js-eu1.hsforms.net/forms/embed/v2.js';

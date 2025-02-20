@@ -19,7 +19,7 @@ const HubspotContactForm = props => {
                     portalId: portalId,
                     formId: formId,
                     target: '#hubspotForm',
-                    onFormSubmit: () => {
+                    onFormSubmit: (form) => {
                         const formData = new FormData(form.target);
                         const username = formData.get('username');
                         const email = formData.get('email');

@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import { AnalyticsBrowser } from "@segment/analytics-next";
-import HubspotContactForm from "./components/HubspotForm";
 const writeKey = process.env.write_key;
 const analytics = AnalyticsBrowser.load({ writeKey: "trt2mhv6rjiqM8rpsRExWM1pBiguWqUm" });
     

@@ -43,7 +43,7 @@ const HubspotContactForm = props => {
     }, []);
 
     return (
-        <div>
+        <div ref={formContainerRef}>
             <div id="hubspotForm"></div>
         </div>
     );

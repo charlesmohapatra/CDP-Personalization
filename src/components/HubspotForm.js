@@ -1,4 +1,8 @@
 import React, {useEffect} from "react";
+import { AnalyticsBrowser } from "@segment/analytics-next";
+import HubspotContactForm from "./components/HubspotForm";
+const writeKey = process.env.write_key;
+const analytics = AnalyticsBrowser.load({ writeKey: "trt2mhv6rjiqM8rpsRExWM1pBiguWqUm" });
     
 const HubspotContactForm = props => {
     const { region, portalId, formId } = props;
@@ -17,7 +21,19 @@ const HubspotContactForm = props => {
                     formId: formId,
                     target: '#hubspotForm',
                     onFormSubmit: () => {
-                        window.alert("Form Submitted Successfully");
+                        const formData = new FormData(form.target);
+                        const username = formData.get('username');
+                        const email = formData.get('email');
+                        const message = formData.get('message');
+
+                        analytics.track('Hubspot Form Submitted', {
+                        attributes: {
+                            type: 'Contacts',
+                            userName: username,
+                            email: email,
+                            message: message,
+                        },
+                        });
                     },
                 })
             }

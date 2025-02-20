@@ -28,8 +28,10 @@ const handleSubmit = async (e) => {
   //   },
   // });
 
-  // window.alert('Form Submitted Successfully');
+  window.alert('Form Submitted Successfully');
 };
+
+
 
 
 
@@ -104,6 +106,7 @@ const Contact = () => {
                 region="eu1"
                 portalId="143378670"
                 formId='64549387-8218-4d05-b6c2-2d3dd954dc9f'
+                onSubmit={handleSubmit}
                 />
         </div>
       </div>

@@ -20,19 +20,22 @@ const HubspotContactForm = props => {
                     formId: formId,
                     target: '#hubspotForm',
                     onFormSubmit: (form) => {
-                        const formData = new FormData(form.target);
+                        const formElement = formContainerRef.current.querySelector("form");
+                        if (formElement) {
+                        const formData = new FormData(formElement);
                         const username = formData.get('username');
                         const email = formData.get('email');
                         const message = formData.get('message');
 
                         analytics.track('Hubspot Form Submitted', {
-                        attributes: {
+                            attributes: {
                             type: 'Contacts',
                             userName: username,
                             email: email,
                             message: message,
-                        },
+                            },
                         });
+                        }
                     },
                 })
             }
